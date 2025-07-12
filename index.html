@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Employee Directory</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Employee Directory</h1>
+    <div>
+      <input type="text" id="searchInput" placeholder="Search by name or email...">
+      <button id="addEmployeeBtn">Add Employee</button>
+    </div>
+  </header>
+
+  <!-- Controls -->
+  <section class="controls">
+    <label>Sort:
+      <select id="sortBy">
+        <option value="firstName">First Name</option>
+        <option value="department">Department</option>
+      </select>
+    </label>
+    <label>Show:
+      <select id="perPage">
+        <option>3</option>
+        <option>5</option>
+        <option>10</option>
+      </select>
+    </label>
+  </section>
+
+  <!-- Employee List -->
+  <main>
+    <div id="employeeList" class="employee-list"></div>
+    <div id="pagination"></div>
+  </main>
+
+  <!-- Add/Edit Employee Modal -->
+  <div id="modalOverlay" class="modal-overlay hidden">
+    <div class="modal">
+      <h2 id="modalTitle">Add Employee</h2>
+      <form id="employeeForm">
+        <label>First name
+          <input type="text" name="firstName" required>
+        </label>
+        <label>Last name
+          <input type="text" name="lastName" required>
+        </label>
+        <label>Email
+          <input type="email" name="email" required>
+        </label>
+        <label>Department
+          <select name="department" required>
+            <option value="">Select</option>
+            <option>HR</option>
+            <option>IT</option>
+            <option>Finance</option>
+            <option>Marketing</option>
+            <option>Sales</option>
+            <option>Operations</option>
+          </select>
+        </label>
+        <label>Role
+          <select name="role" required>
+            <option value="">Select</option>
+            <option>Manager</option>
+            <option>Senior Developer</option>
+            <option>Developer</option>
+            <option>Analyst</option>
+            <option>Coordinator</option>
+            <option>Specialist</option>
+            <option>Associate</option>
+          </select>
+        </label>
+        <div id="formErrors" class="form-errors"></div>
+        <div class="modal-actions">
+          <button type="button" id="cancelBtn">Cancel</button>
+          <button type="submit" id="submitBtn">Add</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Employee Directory App. All rights reserved.
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
